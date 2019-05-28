@@ -1,0 +1,217 @@
+/* 最外边的容器 */
+.pageWrap {
+    /* 最外部的容器高度：最小是屏幕高度 */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 全局图片的样式 */
+.wrap img {
+    max-width: 100%;
+}
+
+/* .pageWrap .ant-layout {
+    background: none;
+} */
+
+/* 页面主体 */
+.main {
+    flex: 1;
+}
+
+.main .wrap {
+    border: 1px solid #ccc;
+    border-top: none;
+    overflow: hidden;
+}
+
+.indexSider {
+    border-right: 1px solid #ccc;
+    padding-bottom: 10000px;
+    margin-bottom: -10000px;
+
+}
+
+#indexMenu {
+    border-right: none;
+}
+
+#indexMenu li {
+    margin-left: -1px;
+    transition: .5s;
+    text-align: center;
+    border-left: 3px solid rgba(0, 0, 0, 0)
+}
+
+#indexMenu li:hover,
+#indexMenu .ant-menu-item-selected {
+    /* 选中的样式 */
+    border-left-color: red;
+    background: #e6f7ff;
+}
+
+/* 小屏下的主要部分的导航栏 */
+#indexXsMenu {
+    display: flex;
+}
+
+#indexXsMenu li {
+    flex: 1;
+    float: none;
+    text-align: center;
+}
+
+.indexList {
+    padding: 0 10px;
+}
+
+.indexList p {
+    margin: 0;
+}
+
+
+
+/* 媒体查询:在小屏幕下的样式，在首页中设置了，xs={0} 所以小屏下不显示 */
+@media all and (max-width:767px) {
+    #indexMenu {
+        display: flex;
+        border-bottom: 1px solid #ccc;
+    }
+
+    #indexMenu li {
+        /* 整个宽度撑满 */
+        flex: 1;
+        margin: 0 0 -1px 0;
+        border: none;
+        border-bottom: 3px solid rgba(0, 0, 0, 0)
+    }
+
+    #indexMenu li:hover,
+    #indexMenu .ant-menu-item-selected {
+        background: none;
+        border-bottom-color: green;
+    }
+
+    .indexList {
+        border-left: none;
+    }
+}
+
+
+/* 头部图标 */
+#logo {
+    color: white;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* 头部 row */
+.wrap {
+    position: relative;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+/* 头部 logo 右边的白色分割线 */
+.headerDivider {
+    height: 44px;
+    margin: 10px 0;
+    float: left;
+}
+
+/* 头部，主导航 */
+#nav {
+    float: left;
+    margin-left: 30px;
+    background: none;
+    border: none;
+    line-height: 62px;
+}
+
+#nav a {
+    color: white;
+}
+
+#nav .ant-menu-item-selected a {
+    color: #1890ff;
+}
+
+/* 在超小屏xs下，显示下拉菜单 */
+.xsNav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+
+/* 在详情页面的下面，回复评论，的头像垂直的话默认，不显示头像，所以把它的样式取消 */
+.replyList .ant-list-item-meta-avatar {
+    display: block;
+}
+
+/* 详情页面每个用户信息，头像，标题，发表时间，都居中对齐 */
+.ant-list-item-meta {
+    min-width: 200px;
+    /*在小屏下，给宽度*/
+    align-items: center;
+}
+
+/* 在小屏下的样式 */
+.ant-list-item-action {
+    margin-left: 50px;
+}
+
+
+/* user组件中的用户头像(详情页面中发表文章的作者的头像) */
+.userAvatar {
+    display: block;
+    margin: 10px auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.userInfo {
+    text-align: center;
+    line-height: 24px;
+    padding-bottom: 10px;
+}
+
+.userList {
+    line-height: 32px;
+}
+
+.userList .ant-list-item {
+    position: relative;
+}
+
+.userList .ant-list-item * {
+    vertical-align: middle;
+}
+
+.userList .ant-list-item-content {
+    display: block;
+}
+
+.userList .userName {
+    margin: 0 10px 0 5px;
+}
+
+.userList h4 {
+    display: inline-block;
+    margin: 0;
+}
+
+.userList time {
+    position: absolute;
+    right: 0;
+    top: 12px;
+}
+
+@media all and (max-width:767px) {
+    .userList h4 {
+        display: block;
+    }
+}
